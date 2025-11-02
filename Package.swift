@@ -283,7 +283,7 @@ let package = Package(
 				.define("SQLITE_CORE", to: "1"),
 			],
 			linkerSettings: [
-				.linkedLibrary("m"),
+				.linkedLibrary("m", .when(platforms: [.linux, .android])),
 			]),
 		.testTarget(
 			name: "CSQLiteTests",
